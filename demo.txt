@@ -1,0 +1,34 @@
+<button type="button" class="multiselect dropdown-toggle btn btn-default"
+                                                data-toggle="dropdown" title="{{brokerSlecte}}" ng-click="block2=!block2"
+                                                ng-class="{active:block2}"
+                                                ng-style="{display:hidertwo||hider?'block':'none'}"><span
+                                                class="multiselect-selected-text">{{brokerSlecte}}</span> <b
+                                                class="caret"></b></button>
+
+                                        <ul class="multiselect-container dropdown-menu"
+                                            ng-style="{display:block2?'block':'none'}" id="con2">
+                                            <li class="multiselect-item multiselect-filter" value="0">
+                                                <div class="input-group search_box">
+                                                    <div style="float: left;">
+                                                        <button class="btn btn-default"
+                                                                style="padding:5px 15px;width:60px;" ng-click="All2()">
+                                                            All
+                                                        </button>
+                                                    </div>
+                                                    <div class="search_box_right">
+                                                        <input class="form-control multiselect-search search_input"
+                                                               id="search_input2" type="text"
+                                                               placeholder="{{'Search'|translate}}"
+                                                               ng-model="searchBroker">
+                                                        <span class="glyphicon glyphicon-search" id="search_span2"
+                                                              value="2" ng-click="search_icon($event)"></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li ng-repeat="li in broker" ng-click="Uclick($event)"
+                                                ng-class="{'active':brokerChoose,'cont':brokerChoose}">
+                                                <a tabindex="0">
+                                                    <label class="checkbox"><input type="checkbox" value="{{li}}">{{li}}</label>
+                                                </a>
+                                            </li>
+                                        </ul>
